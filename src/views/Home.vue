@@ -4,6 +4,6 @@
 
 <template>
     <v-card-text>
-        Vue Flow のテスト
+        メイン画面のコンテンツ
     </v-card-text>
 </template>
