@@ -8,37 +8,51 @@ const route = useRoute()
 const drawer = ref(false)
 
 function execLogout() {
+  drawer.value = false
   router.push('/')
 }
 
 const menuList = ref(
-  [{ title: "Home", value: "/home" }, { title: "Vue Flow Test", value: "/first" }]
+  [
+    { title: "Home", name: "home", value: "/home", icon: "mdi-home" },
+    { title: "Vue Flow Test", name: "first", value: "/first", icon: "mdi-vuejs" },
+    { title: "CheaterGrid Test", name: "second", value: "/second", icon: "mdi-vuejs" }
+  ]
 )
 
 const isLogin = computed(() => {
   return route.name === "login"
 })
+
 </script>
 
 <template>
-  <v-responsive class="border rounded" max-height="300">
+  <v-responsive class="border rounded">
     <v-app>
       <v-app-bar>
         <template v-slot:prepend v-if="!isLogin">
-          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-tooltip text="メニュー" location="bottom">
+            <template v-slot:activator="{ props }">
+              <v-app-bar-nav-icon @click.stop="drawer = !drawer" v-bind="props"></v-app-bar-nav-icon>
+            </template>
+          </v-tooltip>
         </template>
 
         <v-app-bar-title>{{ route.meta.title }}</v-app-bar-title>
 
         <template v-slot:append v-if="!isLogin">
-          <v-btn icon="mdi-logout" @click="execLogout"></v-btn>
+          <v-tooltip text="ログアウト" location="bottom">
+            <template v-slot:activator="{ props }">
+              <v-btn icon="mdi-logout" v-bind="props" @click="execLogout"></v-btn>
+            </template>
+          </v-tooltip>
         </template>
       </v-app-bar>
 
       <v-navigation-drawer v-model="drawer">
         <v-list>
           <v-list-item v-for="item in menuList" :title="item.title" :value="item.value"
-            @click="router.push(item.value)"></v-list-item>
+            @click="router.push(item.value)" :active="route.name === item.name" :prepend-icon="item.icon"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 

@@ -4,6 +4,6 @@
 
 <template>
     <v-card-text>
-        メイン画面のコンテンツ
+        ライブラリやコンポーネントの技術検証用として用意
     </v-card-text>
 </template>
