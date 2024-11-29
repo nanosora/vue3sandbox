@@ -16,7 +16,7 @@ const menuList = ref(
   [
     { title: "Home", name: "home", value: "/home", icon: "mdi-home" },
     { title: "Vue Flow Test", name: "first", value: "/first", icon: "mdi-vuejs" },
-    { title: "CheaterGrid Test", name: "second", value: "/second", icon: "mdi-vuejs" }
+    { title: "CheetahGrid Test", name: "second", value: "/second", icon: "mdi-vuejs" }
   ]
 )
 

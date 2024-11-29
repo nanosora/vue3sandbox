@@ -9,7 +9,7 @@ const routes = [
     { path: '/login', redirect: '/' },
     { path: '/home', name: "home", component: HomeView, meta: { title: "Home" } },
     { path: '/first', name: "first", component: FirstPageView, meta: { title: "VueFlow Test" } },
-    { path: '/second', name: "second", component: SecondPageView, meta: { title: "CheaterGrid Test" } }
+    { path: '/second', name: "second", component: SecondPageView, meta: { title: "CheetahGrid Test" } }
 ]
 
 const router = createRouter({
