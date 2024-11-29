@@ -20,5 +20,8 @@ function execLogin() {
             @click:append-inner="showpwd = !showpwd"></v-text-field>
         <v-btn class="text-none" color="grey-lighten-3" size="x-large" variant="flat" block
             @click="execLogin">ログイン</v-btn>
+        <v-card-text>
+            ※バリデーションとか何も組み込んでいないので、ログインボタン押下でhomeに画面遷移します。
+        </v-card-text>
     </v-card>
 </template>
