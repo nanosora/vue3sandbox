@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 // import './style.css'
 import router from './router'
 import App from './App.vue'
+import * as cheetahGrid from "cheetah-grid";
+import * as CGrid from "vue-cheetah-grid";
 
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
@@ -14,4 +16,5 @@ const vuetify = createVuetify({
     directives,
   })
 
-createApp(App).use(router).use(vuetify).mount('#app')
+
+createApp(App).use(router).use(vuetify).use(cheetahGrid).use(CGrid).mount('#app')
